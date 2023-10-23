@@ -35,6 +35,13 @@ class Snake():
         self.segments[-1].showturtle()
         #new_segment.showturtle()
 
+    def reset(self):
+        for segment in self.segments:
+            segment.reset()
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+
     def extend(self):
         self.add_segment(self.segments[-1].position())
 
